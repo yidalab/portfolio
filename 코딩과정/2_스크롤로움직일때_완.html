@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>이다혜 웹 포트폴리오</title>
+<link href="https://fonts.googleapis.com/css?family=Gothic+A1:100,200,300,400,500,600,700,800,900|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+<style>
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/*base*/
+body { font-family:"Noto Sans Mono CJK KR",'Gothic A1', Helvetica; font-size: 14px; color: #333; font-weight: bold;}
+a { text-decoration: none; color: #333;}
+
+	
+/*layout*/
+.header {  position: fixed; width: 100%; height: 74px; background-color: white; z-index: 100; }
+.header .h_inner {position: relative; margin: 0 auto; width: 94%;  }
+
+#main { width: 100%; height: 966px; background-color: white;}
+#main .inner { margin: 0 auto; width: 94%; border: 1px dashed blue; box-sizing: border-box; min-width: 1600px;}
+#main .inner:after { content: ""; display: block; clear: both;}
+
+.side1 { position:fixed; left:0; width: 50px; height: 100%;  background: white; z-index: 50; }
+.side2 { position:fixed; right:0; width:50px; height: 100%;  background: white; z-index: 50;}
+
+.about { border: 2px solid aqua; margin-top: 400px; text-align: center; height: 966px;}
+.skills { margin-top: 400px; margin-bottom: 200px; width: 100%; border: 2px solid darkgreen; box-sizing: border-box;}
+.contact {position: relative; height: 1000px; /*border: 2px solid cyan;*/ }
+.footer { height: 80px; background: #252525; text-align: center;}
+/*.works {height: 1000px; border: 2px dashed orange;}*/
+.works .inner_w { position: relative; margin-top:500px;  border: 3px solid rebeccapurple; height: 2000px; }
+
+
+
+/*header*/
+.header h1 { text-align: center; font-size: 18px; line-height: 74px; font-family: 'Gothic A1'; font-weight: 900; letter-spacing: 0.2px; /*border: 1px solid red;*/ z-index:1000;}
+.header h2 {display: inline-block; position: absolute; left: 0;  line-height: 80px; font-size: 14px;}
+.header p { position: absolute; right: 2px;  font-family: "Noto Sans Mone CJK KR"; font-weight: bold; letter-spacing: -2px; line-height: 80px; font-size: 14px;} 
+
+
+/*title*/
+h3 { opacity: 0; }
+h3:nth-child(odd) { position: absolute; left: 0px; top: 30px; }
+h3:nth-child(even) { position: absolute; right: 0px; top: 30px; }
+
+
+
+   
+/*sidebar*/   
+.side1 .icon1 { position: absolute; top: 374px; left: 13px; /*border: 1px solid blue;*/}
+.side1 .icon1 img { margin-top: 24px; z-index: 1;}
+.side1 .icon1 .pn { display: none; position:absolute; left:36px; top:24px; width: 150px; height: 32px; background: white; text-align: center; line-height: 32px; box-shadow:2px 3px 10px rgba(0,0,0,.2);}
+.side1 .icon1 .mail {display: none; position:absolute; left:36px; top:69px; width: 200px; height: 32px; background: white; text-align: center; line-height: 32px; box-shadow:2px 3px 10px rgba(0,0,0,.2);}
+	
+.side2 .icon2 { position: absolute; left: 13px; top: 374px; /*border: 1px solid blue;*/}
+.side2 .icon2 img { margin-top: 24px; /*border: 1px solid red;*/}
+
+	
+
+/*main*/	
+.inner .pic { border: 4px dashed blue; margin-top: 60px; height: 720px; background: url(images/main_pic.jpg) no-repeat center top; }	
+.slogan { border: 1px dashed green; margin-top: 10px; margin-right: 14px; margin-left: 14px; font-weight: normal;}
+
+   
+
+/*about*/	
+.about:after {content: ""; display: block; clear: both;}
+.about .align { display: inline-block; margin-top: 125px; border: 1px solid orange; width: 96%; }
+.about .align:after {content: ""; display: block; clear: both;}
+.about .hobby {float: left; width: 25%; margin-right: 10px; margin-top: 10px; border: 1px solid red;  text-align: right; font-weight: bold;}
+.about .about_pic {float: left; margin:0 auto; width:716px; height: 675px; background: url(images/pic_about.jpg) no-repeat center top; border: 1px dashed blue; }
+.about .adress {float: left; width:25%; margin-left: 10px; margin-top: 544px; margin-bottom: 10px; border: 1px solid red; text-align: left; font-weight: bold;}
+.about ul li {font-size: 14px; line-height: 24px; }
+
+
+/*skills*/
+.skills:after { content: ""; display: block; clear: both;}
+
+.ss {margin: 0 auto; position: relative; border: 1px solid red;  height:1000px;}
+.ss:after { content: ""; display: block; clear: both;} /*왜 안먹혀*/
+
+.s1 { position: absolute; left: 250px; top: 200px;; width:383px; height: 736px; background: white; }
+.s2 { position: absolute; right: 250px; top: 200px;; width:383px; height: 736px; background: white; }	
+.s1 img:nth-child(1), .s2 img:nth-child(1) {width: 383px;}
+.s1 img:nth-child(2), .s2 img:nth-child(2) { margin-top: 109px; position: absolute; left: 134px; top: 0;}      
+.s1 dl, .s2 dl { margin-top: 330px; }
+.s1 dt, .s2 dt { letter-spacing: -0.5px;}
+.s1 dd, .s2 dd {margin-bottom: 25px; margin-top: 5px; height: 8px; width:340px; background-color: #efefef; }
+.s1>p, .s2>p   { font-family: "Noto Sans Mono CJK KR";}
+
+
+/*works*/
+.works .inner_w:after {content: ""; display: block; clear: both;}
+.works .inner_w .w1 { position: absolute; left: 200px; top: 20px; border: 2px solid pink;}
+.works .inner_w .w2 { position: absolute; right: 200px; top: 400px; border: 2px solid pink;}
+.works .inner_w .w3 { position: absolute; left: 100px; top: 800px; border: 2px solid pink;}
+.works .inner_w .w4 { position: absolute; right: 100px; top: 1200px; border: 2px solid pink;}
+.works .w1 li { float:left;  width: 300px; height:300px; border: 1px dashed blue;}
+.works .w2 li { float:left;  width: 300px; height:300px; border: 1px dashed blue;}
+.works .w3 li { float:left;  width: 300px; height:300px; border: 1px dashed blue;}
+.works .w4 li { float:left;  width: 300px; height:300px; border: 1px dashed blue;}
+.works .inner_w img:nth-child(1) { position: absolute; left: 160px; top: -24px; width: 1100px;  z-index: 10;}
+.works .inner_w img:nth-child(4) { position: absolute; right: 100px; top: 780px; width: 1100px;  z-index: 10; }
+.works .w1>li:nth-child(1) { background: url(images/w_lg.gif) no-repeat center top; background-size: cover;}
+.works .w1>li:nth-child(2) { background: url(images/w_mutto.gif) no-repeat center top; background-size: cover;}
+.works .w1>li:nth-child(3) { background: url(images/w_monc.gif) no-repeat center top; background-size: cover;}
+
+.works .w2>li:nth-child(1) { background: url(images/w_hd.gif) no-repeat center top; background-size: cover;}
+.works .w2>li:nth-child(2) { background: url(images/w_chevo.gif) no-repeat center top; background-size: cover;}
+.works .w2>li:nth-child(3) { background: #333;}
+
+.works .w3>li:nth-child(1) { background: url(images/w_gucci.gif) no-repeat center top; background-size: cover;}
+.works .w3>li:nth-child(2) { background: url(images/w_bogum.gif) no-repeat center top; background-size: cover;}
+.works .w3>li:nth-child(3) { background: url(images/w_gm.gif) no-repeat center top; background-size: cover;}
+
+.works .w4>li:nth-child(1) { background: url(images/w_hott.gif) no-repeat center top; background-size: cover;}
+.works .w4>li:nth-child(2) { background: url(images/w_lavien.gif) no-repeat center top; background-size: cover;}
+.works .w4>li:nth-child(3) { background: url(images/w_catch.gif) no-repeat center top; background-size: cover;}
+
+
+
+
+/*contact*/
+.contact .bg {margin: 0 auto; /*border: 5px solid red;*/ width: 1400px; height: 1000px; background: url(images/thanks.gif) center 140px no-repeat;}
+.contact .number {position: absolute; right: 195px; top: 440px; border: 1px dashed; font-family: "Noto Sans Mono CJK KR";}
+.contact .number dt { float: left; margin-top: 8px; /*border: 1px dashed; box-sizing: border-box;*/ }
+.contact .number dd { margin-left: 100px; margin-top: 8px; font-weight: normal; /* box-sizing: border-box; border: 1px dashed red;*/}
+
+
+/*footer*/
+.footer p { /*border: 2px solid red;*/ color: white; font-family: Helvetica; font-weight: normal; line-height: 80px;}
+.footer p span { font-weight: normal;}
+
+#tt { position: fixed; left: 500px; top: 0; font-size: 30px; background: rebeccapurple; z-index: 10000; color: white;}
+</style>
+
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script>
+
+    $(function(){
+        //--------------------------전화랑 메일 클릭시
+        $("a.pn_btn").click(function(){
+        
+            $(".pn").slideToggle();
+            return false;
+        });
+        
+        $("a.mail_btn").click(function(){
+        
+            $(".mail").slideToggle();
+            return false;
+        });
+        
+        
+        //-------------------------메인 로고 클릭시
+        $("h1").click(function(){
+            window.location.reload();
+            
+        });
+        
+        
+       
+        
+        /////////////////스크롤시/////////////////////////
+        
+         $(window).scroll(function(){ //스크롤하는동안 //스크롤링사이트-메뉴바 참고
+		  
+			  var b = $(document).scrollTop(); 
+			      $("#tt").text(b);
+		  
+			  if((b >=0) && (b < 1100)) {	//home 구간
+				   
+                
+			  } 
+	
+			  if((b >= 1100) && (b < 2200)) {	//about
+                    $(".h_inner h2").css({display: 'none'})
+                    $(".h_inner p").hide();                    
+                    $(".t1").css({opacity:1});           
+                    $(".t2").css({opacity:1});
+              
+				    
+			  } 
+							  
+			  if((b >= 2200) && (b < 3300)) { //skill
+                    $(".t1").css({opacity:0});           
+                    $(".t2").css({opacity:0});
+                    $(".t3").css({opacity:1}); 
+                    $(".t4").css({opacity:1});               
+				    
+			  } 
+              
+              if((b >= 3300) && (b < 5600)) { //works
+                    $(".t3").css({opacity:0}); 
+                    $(".t4").css({opacity:0});           
+                    $(".t5").css({opacity:1});           
+                    $(".t6").css({opacity:1});     
+                
+			  } 
+              
+               			  
+			  if(b >= 5600) {	//contact                
+                    $(".t5").css({opacity:0}); 
+                    $(".t6").css({opacity:0});           
+                    $(".t7").css({opacity:1});           
+                    $(".t8").css({opacity:1});  
+				       
+			  } 						  
+							  
+		  
+	  });
+      
+      
+       $(window).scroll(function(){
+            
+            var b = $(document).scrollTop();
+            
+                  
+            if((b<=6300) && (b>5600)){  //contact    
+                                        
+                $(".t7").css({opacity:1});           
+                $(".t8").css({opacity:1});           
+                 
+                
+               
+            }
+            
+            if((b<=5600) && (b>3300)){ //works
+                
+                                         
+                $(".t5").css({opacity:1});           
+                $(".t6").css({opacity:1});           
+                $(".t7").css({opacity:0});           
+                $(".t8").css({opacity:0});           
+                
+            }
+            
+            
+             if((b<=3300) && (b>2200)){ //skills
+            
+                                        
+                $(".t5").css({opacity:0});           
+                $(".t6").css({opacity:0}); 
+                $(".t3").css({opacity:1});           
+                $(".t4").css({opacity:1});   
+                                            
+            
+            }
+            
+             if((b<=2200) && (b>1100)){ //about
+            
+                                    
+                $(".t3").css({opacity:0});           
+                $(".t4").css({opacity:0}); 
+                $(".t2").css({opacity:1});           
+                $(".t1").css({opacity:1});   
+                       
+                
+            }
+            
+             if((b<=1100) && (b>0)){  //main
+                                   
+                $(".t2").css({opacity:0});           
+                $(".t1").css({opacity:0});
+                $(".h_inner h2").css({display:'block'});
+                $(".h_inner p").css({display:'block'});
+                
+                
+            }
+           
+            
+        });
+        
+        
+        ///////////////스크롤 끝//////////////////////
+        
+        
+         //////////////////////아래 화살표 클릭시////////////////////
+        
+       $("a.down").click(function(){
+            
+            var b = $('html,body').scrollTop();
+           
+            
+            if((b>=0) && (b <1200)){
+            
+                $("html,body").animate({ scrollTop:1200 });
+                $(".h_inner h2").css({display:'none'});
+                $(".h_inner p").css({display:'none'});
+                $(".t1").css({opacity:1});           
+                $(".t2").css({opacity:1});
+                      
+                            
+            }
+            
+           if((b>=1200) && (b <2600)){
+            
+                $("html,body").animate({ scrollTop:2600 });
+                $(".t1").css({opacity:0});           
+                $(".t2").css({opacity:0});
+                $(".t3").css({opacity:1}); 
+                $(".t4").css({opacity:1});           
+                
+            }
+            
+            if((b>=2600) && (b <3900)){
+            
+                $("html,body").animate({ scrollTop:3900 });               
+                $(".t3").css({opacity:0}); 
+                $(".t4").css({opacity:0});           
+                $(".t5").css({opacity:1});           
+                $(".t6").css({opacity:1});           
+                
+            }
+            
+             if((b>=3900) && (b <4700)){
+            
+                $("html,body").animate({ scrollTop:4700 });              
+                $(".t3").css({opacity:0}); 
+                $(".t4").css({opacity:0});           
+                $(".t5").css({opacity:1});           
+                $(".t6").css({opacity:1});           
+                
+            }
+            
+            if((b>=4700) && (b <6400)){
+            
+                $("html,body").animate({ scrollTop:6400 });                           
+                $(".t5").css({opacity:0});           
+                $(".t6").css({opacity:0});           
+                $(".t7").css({opacity:1});           
+                $(".t8").css({opacity:1});           
+                
+            }
+            
+            return false;
+            
+            
+        });
+        
+        //////////////////아래화살표 끝/////////////
+        
+        
+       
+         ////////////////////////위 화살표 클릭시///////////////
+       $("a.up").click(function(){
+            
+            var b = $('html,body').scrollTop();
+            
+                  
+            if((b<=6400) && (b>4700)){
+            
+                $("html,body").animate({ scrollTop:4700 });                         
+                $(".t5").css({opacity:1});           
+                $(".t6").css({opacity:1});           
+                $(".t7").css({opacity:0});           
+                $(".t8").css({opacity:0});    
+                
+               
+            }
+            
+            if((b<=4700) && (b>3900)){
+                
+                $("html,body").animate({ scrollTop:3900 });                         
+                $(".t5").css({opacity:1});           
+                $(".t6").css({opacity:1});           
+                $(".t7").css({opacity:0});           
+                $(".t8").css({opacity:0});           
+                
+            }
+            
+            
+             if((b<=3900) && (b>2600)){
+            
+                $("html,body").animate({ scrollTop:2600 });                         
+                $(".t5").css({opacity:0});           
+                $(".t6").css({opacity:0}); 
+                $(".t3").css({opacity:1});           
+                $(".t4").css({opacity:1});   
+                                           
+            
+            }
+            
+             if((b<=2600) && (b>1200)){
+            
+                $("html,body").animate({ scrollTop:1200 });                         
+                $(".t3").css({opacity:0});           
+                $(".t4").css({opacity:0}); 
+                $(".t2").css({opacity:1});           
+                $(".t1").css({opacity:1});   
+                      
+                
+            }
+            
+             if((b<=1200) && (b>0)){
+            
+                $("html,body").animate({ scrollTop:0 });                         
+                $(".t2").css({opacity:0});           
+                $(".t1").css({opacity:0});
+                $(".h_inner h2").css({display:'block'});
+                $(".h_inner p").css({display:'block'});
+                
+                
+            }
+            return false;
+            
+        });
+        //////////////////윗화살표 끝/////////////////////
+        
+        
+
+    });
+
+
+
+</script>
+</head>
+
+<body>
+    <div id="tt">0</div>
+	<div id="main">
+		
+			<div class="header">
+				<div class="h_inner">
+					<h2>웹디자인포트폴리오</h2>
+					<h3 class="t1">about</h3>								
+					<h3 class="t2">이다혜</h3>
+					<h3 class="t3">skills</h3>								
+					<h3 class="t4">기술</h3>
+					<h3 class="t5">works</h3>								
+					<h3 class="t6">작업물</h3>								
+					<h3 class="t7">Thanks</h3>								
+					<h3 class="t8">끝</h3>									
+					<p>2019 - 2020</p>
+					<h1><a href="#">Leedahye</a></h1>
+				</div>				
+			</div>
+			<div class="side1">
+				<div class="icon1">
+					<a href="#" class="pn_btn"><img src="images/icon_phone.gif" alt="전화번호"></a>
+					<div class="pn">010-5143-7340</div>
+					<a href="#" class="mail_btn"><img src="images/icon_mail.gif" alt="이메일"></a>
+					<div class="mail">leedahyeishere@gmail.com</div>  
+				</div>
+			</div>
+			
+			<div class="side2">
+				<div class="icon2">
+					<a href="#" class="up"><img src="images/up.gif" alt="윗페이지"></a> 
+					<a href="#" class="down"><img src="images/down.gif" alt="아래페이지" ></a>
+				</div>
+			</div>
+			
+			<div class="inner">
+				<div class="pic"></div>
+				<p class="slogan">There were dreams and goals that I had in my mind from the day I dreamt of becoming an artist. although I had to go through many obstacles, I learnd that I should always believe in myself.</p>
+				
+				<div class="about">					
+					<div class="align">
+						<ul class="hobby">
+							<li>영화 보기</li>
+							<li>책 읽기</li>
+							<li>음악 듣기</li>
+							<li>넷플릭스 둘러보기</li>
+						</ul>
+						<div class="about_pic"></div>
+						<ul class="adress">
+							<li>92년생</li>
+							<li>의정부시 거주</li>
+							<li>/</li>
+							<li>희망사항</li>
+							<li>즐겁게 일하기</li>
+						</ul>						
+					</div>						
+				</div>		
+					
+				<div class="skills">
+					<div class="ss">
+						<div class="s1">
+							<img src="images/skill_1.gif" alt="coding">
+							<img src="images/icon_code.gif" alt="">
+							<dl>
+								<dt class="d1">HTML/CSS</dt>
+								<dd class="d1"></dd>
+								<dt class="d2">JAVASCRIPT/jQuery</dt>
+								<dd class="d2"></dd>
+							</dl>
+							<p>HTML5와 CSS3를 사용하며 그리드를 이해합니다.
+웹표준과 웹접근성에 맞는 마크업을 합니다.
+자바스크립트의 작동 원리를 이해하고 다양한 플러그인과
+제이쿼리를 사용할 수 있습니다.   
+  </p>
+						</div>
+						<div class="s2">
+							<img src="images/skill2.gif" alt="design">
+							<img src="images/icon_design.gif" alt="">
+							<dl>
+								<dt>Photoshop</dt>
+								<dd></dd>
+								<dt>Illlustrator</dt>
+								<dd></dd>
+								<dt>Drawing</dt>
+								<dd></dd>
+							</dl>
+							<p>기본적인 스케치부터 웹, 모바일, 배너, 상세페이지, 로고
+등을 디자인합니다.
+사용자 경험과 사용자 인터페이스 개념을 바탕으로 디자인
+합니다.
+  </p>
+							
+						</div>
+					</div>						
+				</div>			
+				
+				<div class="works">
+				    <div class="inner_w">
+                        <img src="images/work1.gif" alt="coding 작품">
+                        <ul class="w1">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                        <ul class="w2">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <img src="images/work2.gif" alt="design 작품">
+                        <ul class="w3">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                        <ul class="w4">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+				</div>
+                    
+                <div class="contact">
+                    <div class="bg"></div>
+                    <dl class="number">
+                        <dt>받는 사람</dt>
+                        <dd>이다혜</dd>
+                        <dt>E-mail</dt>
+                        <dd>leedahyeishere@gmail.com</dd>
+                        <dt>Phone</dt>
+                        <dd>010-5143-7340</dd>
+                    </dl>                    
+                </div>		
+                <div class="footer">
+                    <p>&copy; Leedahye. <span>All rights reserved.</span></p>
+                </div>		
+						
+									
+			</div>
+		
+	</div>
+	
+	
+
+	
+</body>
+</html>
